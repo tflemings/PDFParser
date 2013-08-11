@@ -11,7 +11,7 @@
     <div class="body">
         <s:form beanclass="com.pdfparse.action.PdfActionBean">
             <s:file name="pdfName"/>
-            <s:button name="submit" value="Parse"/>
+            <s:submit name="submit" id="submit" value="Parse"/>
         </s:form>
     </div>
     </s:layout-component>

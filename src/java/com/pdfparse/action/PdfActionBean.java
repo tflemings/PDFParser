@@ -15,7 +15,7 @@ import net.sourceforge.stripes.action.SimpleMessage;
  * @author Tony
  */
 public class PdfActionBean extends PdfParserAbstractActionBean {
-    private static final String INDEX = "/index.php";
+    private static final String INDEX = "/index.jsp";
     
     private FileBean pdfName;
     
@@ -25,7 +25,7 @@ public class PdfActionBean extends PdfParserAbstractActionBean {
     }
     
     public Resolution submit() {
-        getContext().getMessages().add(new SimpleMessage(this.pdfName.toString()));
+        getContext().getMessages().add(new SimpleMessage("The Parse button works."));
         return new ForwardResolution(INDEX);
     }
     
