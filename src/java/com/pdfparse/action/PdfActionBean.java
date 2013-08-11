@@ -21,6 +21,10 @@ public class PdfActionBean extends PdfParserAbstractActionBean {
     
     @DefaultHandler
     public Resolution index() {
+        return new ForwardResolution(INDEX);
+    }
+    
+    public Resolution submit() {
         getContext().getMessages().add(new SimpleMessage(this.pdfName.toString()));
         return new ForwardResolution(INDEX);
     }
