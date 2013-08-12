@@ -13,6 +13,7 @@
             <s:file name="pdfName"/>
             <s:submit name="submit" id="submit" value="Parse"/>
         </s:form>
+        <p>${actionBean.contents}</p>
     </div>
     </s:layout-component>
 </s:layout-render>
