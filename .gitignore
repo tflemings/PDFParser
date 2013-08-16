@@ -2,5 +2,5 @@
 ## Netbeans Projects
 #####################
 *.class
-*.jar
+build/
 *.war
