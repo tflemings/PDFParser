@@ -42,7 +42,7 @@ public class PdfActionBean extends PdfParserAbstractActionBean {
             this.parser = new Parser();
             this.parser.setDocument(document);
             this.parser.splitDocument();
-            this.splitDocument = this.parser.getDocList().get(0);
+            this.splitDocument = this.parser.getDocList().get(1);
             PDFTextStripper s = new PDFTextStripper();
             this.contents = s.getText(this.splitDocument);
             /*
