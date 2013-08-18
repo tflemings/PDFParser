@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.pdfparse.action;
 
 import com.pdfparse.controller.Parser;
@@ -17,7 +13,8 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
 
 /**
- *
+ * This ActionBean handles instantiating the needed objects to parse a PDF file.
+ * 
  * @author Tony
  */
 public class PdfActionBean extends PdfParserAbstractActionBean {
@@ -30,11 +27,24 @@ public class PdfActionBean extends PdfParserAbstractActionBean {
     private PDDocument splitDocument;
     private String contents;
     
+    /**
+     * This method is the default behavior of this class. When this class is
+     * invoked without using the event attribute of a link or the name attribute
+     * of a form control it merely forwards directly to the CONSTANT page.
+     * 
+     * @return a Resolution object responsible for forwarding the request
+     */
     @DefaultHandler
     public Resolution index() {
         return new ForwardResolution(CONTENTS);
     }
     
+    /**
+     * This method instantiates the requisite objects needed to parse the 
+     * provided file and is called from a button on the requesting page.
+     * 
+     * @return a Resolution object responsible for forwarding the request
+     */   
     public Resolution submit() {
         try {
             String filePath = "C:\\Users\\Tony\\Downloads\\" + pdfName.getFileName();          
