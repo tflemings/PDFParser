@@ -2,6 +2,7 @@ package com.pdfparse.action;
 
 import com.pdfparse.controller.Parser;
 import com.pdfparse.controller.XMLBuilder;
+import com.pdfparse.model.AnnualRegisterT4Report;
 import com.pdfparse.model.Report;
 import java.io.IOException;
 import net.sourceforge.stripes.action.DefaultHandler;
@@ -22,7 +23,7 @@ public class PdfActionBean extends PdfParserAbstractActionBean {
     
     private FileBean pdfName;
     private XMLBuilder xmlBuilder;
-    private Report report;
+    private AnnualRegisterT4Report report;
     private Parser parser;
     private PDDocument splitDocument;
     private String contents;
@@ -52,9 +53,11 @@ public class PdfActionBean extends PdfParserAbstractActionBean {
             this.parser = new Parser();
             this.parser.setDocument(document);
             this.parser.splitDocument();
-            this.splitDocument = this.parser.getDocList().get(1);
+            this.splitDocument = this.parser.getDocList().get(0);
             PDFTextStripper s = new PDFTextStripper();
             this.contents = s.getText(this.splitDocument);
+            this.report = new AnnualRegisterT4Report();
+            report.assignRunNumberFromPdf(this.contents);
             /*
             PDFTextStripper s = new PDFTextStripper();
             String contents  = s.getText(document);
@@ -89,11 +92,11 @@ public class PdfActionBean extends PdfParserAbstractActionBean {
         return new XMLBuilder();
     }
     
-    public void setReport(Report report) {
+    public void setReport(AnnualRegisterT4Report report) {
         this.report = report;
     }
     
-    public Report getReport() {
+    public AnnualRegisterT4Report getReport() {
         return this.report;
     }
     

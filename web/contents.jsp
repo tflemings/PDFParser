@@ -9,7 +9,7 @@
     <s:layout-component name="body">
         <s:messages/>
     <div class="body">
-        <p>${actionBean.contents}</p>
+        <p>${actionBean.report.runNumber}</p>
     </div>
     </s:layout-component>
 </s:layout-render>
