@@ -62,4 +62,180 @@ public class T4Form implements Serializable {
     public T4Form() {
         
     }
+
+    public String getFileNo() {
+        return fileNo;
+    }
+
+    public String getDept() {
+        return dept;
+    }
+
+    public String getSin() {
+        return sin;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getIncome() {
+        return income;
+    }
+
+    public double getCppDed() {
+        return cppDed;
+    }
+
+    public double getPenAdjust() {
+        return penAdjust;
+    }
+
+    public double getFedTax() {
+        return fedTax;
+    }
+
+    public double getQppDed() {
+        return qppDed;
+    }
+
+    public double getPpipDed() {
+        return ppipDed;
+    }
+
+    public double getRppDed() {
+        return rppDed;
+    }
+
+    public double getcQppEarn() {
+        return cQppEarn;
+    }
+
+    public double getPpipEarn() {
+        return ppipEarn;
+    }
+
+    public double getRppNo() {
+        return rppNo;
+    }
+
+    public double getcQppXmpt() {
+        return cQppXmpt;
+    }
+
+    public double getPpipExempt() {
+        return ppipExempt;
+    }
+
+    public double getCharity() {
+        return charity;
+    }
+
+    public double getEiDed() {
+        return eiDed;
+    }
+
+    public double getUnionDues() {
+        return unionDues;
+    }
+
+    public double getEiEarn() {
+        return eiEarn;
+    }
+
+    public double getEmployCode() {
+        return employCode;
+    }
+
+    public double getEiExempt() {
+        return eiExempt;
+    }
+
+    public void setFileNo(String fileNo) {
+        this.fileNo = fileNo;
+    }
+
+    public void setDept(String dept) {
+        this.dept = dept;
+    }
+
+    public void setSin(String sin) {
+        this.sin = sin;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setIncome(double income) {
+        this.income = income;
+    }
+
+    public void setCppDed(double cppDed) {
+        this.cppDed = cppDed;
+    }
+
+    public void setPenAdjust(double penAdjust) {
+        this.penAdjust = penAdjust;
+    }
+
+    public void setFedTax(double fedTax) {
+        this.fedTax = fedTax;
+    }
+
+    public void setQppDed(double qppDed) {
+        this.qppDed = qppDed;
+    }
+
+    public void setPpipDed(double ppipDed) {
+        this.ppipDed = ppipDed;
+    }
+
+    public void setRppDed(double rppDed) {
+        this.rppDed = rppDed;
+    }
+
+    public void setcQppEarn(double cQppEarn) {
+        this.cQppEarn = cQppEarn;
+    }
+
+    public void setPpipEarn(double ppipEarn) {
+        this.ppipEarn = ppipEarn;
+    }
+
+    public void setRppNo(double rppNo) {
+        this.rppNo = rppNo;
+    }
+
+    public void setcQppXmpt(double cQppXmpt) {
+        this.cQppXmpt = cQppXmpt;
+    }
+
+    public void setPpipExempt(double ppipExempt) {
+        this.ppipExempt = ppipExempt;
+    }
+
+    public void setCharity(double charity) {
+        this.charity = charity;
+    }
+
+    public void setEiDed(double eiDed) {
+        this.eiDed = eiDed;
+    }
+
+    public void setUnionDues(double unionDues) {
+        this.unionDues = unionDues;
+    }
+
+    public void setEiEarn(double eiEarn) {
+        this.eiEarn = eiEarn;
+    }
+
+    public void setEmployCode(double employCode) {
+        this.employCode = employCode;
+    }
+
+    public void setEiExempt(double eiExempt) {
+        this.eiExempt = eiExempt;
+    }
 }

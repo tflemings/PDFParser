@@ -19,7 +19,7 @@ public class AnnualRegisterT4Report  {
     private String companyCode;
     private String servicingCenter;
     private String periodEnd;
-    private ArrayList<T4Form> forms;
+    private ArrayList<T4Form> forms = new ArrayList<T4Form>();
     
     public AnnualRegisterT4Report() {
         
@@ -79,6 +79,18 @@ public class AnnualRegisterT4Report  {
     
     public String getPeriodEnd() {
         return this.periodEnd;
+    }
+    
+    public void setForms(ArrayList<T4Form> forms) {
+        this.forms = forms;
+    }
+    
+    public ArrayList<T4Form> getForms() {
+        return this.forms;
+    }
+    
+    public void addForm(T4Form form) {
+        this.forms.add(form);
     }
     
     /**

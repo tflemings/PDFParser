@@ -59,7 +59,7 @@ public class PdfActionBean extends PdfParserAbstractActionBean {
             this.contents = s.getText(document);
             Parser p = new Parser();
             p.setDocument(contents);
-            this.lines = p.getDocumentLines();
+            this.lines = p.createDocumentLines();
             /*
             PDFTextStripper s = new PDFTextStripper();
             String contents  = s.getText(document);

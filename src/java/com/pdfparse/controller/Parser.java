@@ -15,6 +15,7 @@ import java.util.StringTokenizer;
 public class Parser implements Serializable {
     
     private String document;
+    private ArrayList<String> lines;
     
     public Parser() {
         
@@ -28,12 +29,17 @@ public class Parser implements Serializable {
         return this.document;
     }
     
-    public ArrayList<String> getDocumentLines() {
+    public void setLines(ArrayList<String> lines) {
+        this.lines = lines;
+    }
+    
+    public ArrayList<String> createDocumentLines() {
         ArrayList<String> lines = new ArrayList<String>();
         StringTokenizer t = new StringTokenizer(this.document, "\r\n");
         while (t.hasMoreTokens()) {
             lines.add(t.nextToken());
         }
+        this.setLines(lines);
         return lines;
     }
 }
