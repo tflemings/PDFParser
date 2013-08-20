@@ -4,49 +4,36 @@
  */
 package com.pdfparse.controller;
 
-import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.util.Splitter;
+import java.util.StringTokenizer;
 
 /**
  *
  * @author Tony
  */
-public class Parser {
+public class Parser implements Serializable {
     
-    private PDDocument document;
-    private ArrayList<PDDocument> docList = new ArrayList<PDDocument>();
+    private String document;
     
     public Parser() {
         
     }
     
-    public void setDocument(PDDocument document) {
+    public void setDocument(String document) {
         this.document = document;
     }
     
-    public PDDocument getDocument() {
+    public String getDocument() {
         return this.document;
     }
     
-    public void setDocList(ArrayList<PDDocument> docList) {
-        this.docList = docList;
-    }
-    
-    public ArrayList<PDDocument> getDocList() {
-        return this.docList;
-    }
-    
-    public String splitDocument() {
-        Splitter s = new Splitter();
-        try {
-            this.docList = (ArrayList<PDDocument>) s.split(this.document);
-            return "Document split";
-        } catch (IOException e) {
-            return e.getMessage();
+    public ArrayList<String> getDocumentLines() {
+        ArrayList<String> lines = new ArrayList<String>();
+        StringTokenizer t = new StringTokenizer(this.document, "\r\n");
+        while (t.hasMoreTokens()) {
+            lines.add(t.nextToken());
         }
-        
+        return lines;
     }
 }

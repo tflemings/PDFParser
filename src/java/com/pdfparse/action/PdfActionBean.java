@@ -1,10 +1,8 @@
 package com.pdfparse.action;
 
 import com.pdfparse.controller.Parser;
-import com.pdfparse.controller.XMLBuilder;
-import com.pdfparse.model.AnnualRegisterT4Report;
-import com.pdfparse.model.Report;
 import java.io.IOException;
+import java.util.ArrayList;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.FileBean;
 import net.sourceforge.stripes.action.ForwardResolution;
@@ -22,11 +20,12 @@ public class PdfActionBean extends PdfParserAbstractActionBean {
     private static final String CONTENTS = "/contents.jsp";
     
     private FileBean pdfName;
-    private XMLBuilder xmlBuilder;
-    private AnnualRegisterT4Report report;
-    private Parser parser;
-    private PDDocument splitDocument;
+    //private XMLBuilder xmlBuilder;
+    //private AnnualRegisterT4Report report;
+    //private Parser parser;
+    //private PDDocument document;
     private String contents;
+    private ArrayList<String> lines;
     
     /**
      * This method is the default behavior of this class. When this class is
@@ -50,14 +49,17 @@ public class PdfActionBean extends PdfParserAbstractActionBean {
         try {
             String filePath = "C:\\Users\\Tony\\Downloads\\" + pdfName.getFileName();          
             PDDocument document = PDDocument.load(filePath);
+            /*
             this.parser = new Parser();
             this.parser.setDocument(document);
             this.parser.splitDocument();
             this.splitDocument = this.parser.getDocList().get(0);
+            */
             PDFTextStripper s = new PDFTextStripper();
-            this.contents = s.getText(this.splitDocument);
-            this.report = new AnnualRegisterT4Report();
-            report.assignRunNumberFromPdf(this.contents);
+            this.contents = s.getText(document);
+            Parser p = new Parser();
+            p.setDocument(contents);
+            this.lines = p.getDocumentLines();
             /*
             PDFTextStripper s = new PDFTextStripper();
             String contents  = s.getText(document);
@@ -84,6 +86,14 @@ public class PdfActionBean extends PdfParserAbstractActionBean {
         return this.pdfName;
     }
     
+    public void setLines(ArrayList<String> lines) {
+        this.lines = lines;
+    }
+    
+    public ArrayList<String> getLines() {
+        return this.lines;
+    }
+    /*
     public void setXmlBuilder(XMLBuilder xml) {
         this.xmlBuilder = xml;
     }
@@ -108,14 +118,14 @@ public class PdfActionBean extends PdfParserAbstractActionBean {
         return this.parser;
     }
     
-    public void setSplitDocument(PDDocument splitDocument) {
-        this.splitDocument = splitDocument;
+    public void setDocument(PDDocument document) {
+        this.document = document;
     }
     
-    public PDDocument getSplitDocument() {
-        return this.splitDocument;
+    public PDDocument getDocument() {
+        return this.document;
     }
-    
+    */
     public void setContents(String contents) {
         this.contents = contents;
     }

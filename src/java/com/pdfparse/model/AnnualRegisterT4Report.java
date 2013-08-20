@@ -4,6 +4,8 @@
  */
 package com.pdfparse.model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Tony
@@ -17,6 +19,7 @@ public class AnnualRegisterT4Report  {
     private String companyCode;
     private String servicingCenter;
     private String periodEnd;
+    private ArrayList<T4Form> forms;
     
     public AnnualRegisterT4Report() {
         

@@ -9,7 +9,9 @@
     <s:layout-component name="body">
         <s:messages/>
     <div class="body">
-        <p>${actionBean.report.runNumber}</p>
+        <c:forEach var="line" items="${actionBean.lines}">
+            <p>${line}</p>
+        </c:forEach>
     </div>
     </s:layout-component>
 </s:layout-render>
